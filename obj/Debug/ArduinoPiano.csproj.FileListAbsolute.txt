@@ -1,0 +1,9 @@
+c:\users\unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\bin\Debug\ArduinoPiano.exe.config
+c:\users\unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\bin\Debug\ArduinoPiano.exe
+c:\users\unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\bin\Debug\ArduinoPiano.pdb
+c:\users\unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\obj\Debug\ArduinoPiano.csprojResolveAssemblyReference.cache
+c:\users\unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\obj\Debug\ArduinoPiano.Form1.resources
+c:\users\unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\obj\Debug\ArduinoPiano.Properties.Resources.resources
+c:\users\unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\obj\Debug\ArduinoPiano.csproj.GenerateResource.Cache
+c:\users\unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\obj\Debug\ArduinoPiano.exe
+c:\users\unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\obj\Debug\ArduinoPiano.pdb
