@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.IO.Ports;
 using System.Media;
 using System.Threading;
+using System.Text.RegularExpressions;
+
 namespace ArduinoPiano
 {
     public partial class Form1 : Form
@@ -38,32 +40,100 @@ namespace ArduinoPiano
 
         }
 
-        void play()
+        void play1()
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "C:\\1.wav";
+            player.Play();
+        }
+
+        void play2()
         {
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();
             player.SoundLocation = "C:\\2.wav";
             player.Play();
         }
 
-  
+        void play3()
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "C:\\3.wav";
+            player.Play();
+        }
+
+        void play4()
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "C:\\4.wav";
+            player.Play();
+        }
+
+        void play5()
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "C:\\5.wav";
+            player.Play();
+        }
+
+        void play6()
+        {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "C:\\6.wav";
+            player.Play();
+        }
+
+
+
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             
             try {
+                
                 string alinanDeger = serialPort1.ReadLine();
-                ////
-                string[] parcalar;
-                parcalar = alinanDeger.Split('\r');
-                alinanDeger = parcalar[0];
-                ///
-                alinanDeger = alinanDeger.Trim(); //remove newline
+                string value = serialPort1.ReadLine();
+                string[] lines = Regex.Split(value, "\r\n");
+                foreach (string line in lines)
+                {
+                    textBox1.Text = "Alinan Deger: " + alinanDeger; 
+                }
+
+
+          //      alinanDeger = alinanDeger.Trim(); //remove newline
+           
                 textBox1.Text = "Alinan Deger: " +alinanDeger;
                 int donusturulendeger = int.Parse(alinanDeger);
-                if (donusturulendeger >=230 )
-                    play();
+                if (donusturulendeger >= 480 && donusturulendeger <= 520)
+                {
+                    play1();
+
+                }
+                else if (donusturulendeger >= 200 && donusturulendeger <= 260)
+                { play2(); }
+                else if (donusturulendeger >= 2950 && donusturulendeger <= 3050)
+                {
+                    play3();
+                }
+                else if (donusturulendeger >= 3950 && donusturulendeger <= 4150)
+                {
+                    play4();
+                }
+                else if (donusturulendeger >= 4850 && donusturulendeger <= 5300)
+                {
+                    play5();
+                }
+                else if (donusturulendeger >= 6050 && donusturulendeger <= 6200)
+                {
+                    play6();
+                }
+                else { }
+
+
+
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             { textBox1.Text = ex.ToString();
                 timer1.Stop(); 
             }
@@ -77,8 +147,7 @@ namespace ArduinoPiano
             {
                 serialPort1.Open();
                 
-                Thread.Sleep(2000);
-                Thread.Sleep(0);
+               
                 
             }
             if(serialPort1.IsOpen==true)
