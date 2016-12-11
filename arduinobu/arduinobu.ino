@@ -184,10 +184,60 @@ if(Serial.available())
   if(a=='0')
   {
     digitalWrite(12,HIGH);
-    }
+  }
+   else
+   {
+    digitalWrite(12,LOW);
+   }
+   /////////////////////
+   if(a=='1')
+   {
+    digitalWrite(11,HIGH);
+   }
     else
-    {digitalWrite(12,LOW);
-      }
+   {
+    digitalWrite(11,LOW);
+    }
+    //////////////////////  
+   if(a=='2')
+   {
+    digitalWrite(10,HIGH);
+   }
+    else
+   {
+    digitalWrite(10,LOW);
+    }
+    
+   if(a=='3')
+   {
+    digitalWrite(9,HIGH);
+   }
+    else
+   {
+    digitalWrite(9,LOW);
+    }
+
+
+       if(a=='4')
+   {
+    digitalWrite(8,HIGH);
+   }
+    else
+   {
+    digitalWrite(8,LOW);
+    }
+
+
+       if(a=='5')
+   {
+    digitalWrite(7,HIGH);
+   }
+    else
+   {
+    digitalWrite(7,LOW);
+    }
+
+    
   }
 
    

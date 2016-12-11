@@ -169,6 +169,13 @@ namespace ArduinoPiano
         private void button2_Click(object sender, EventArgs e)
         {
             serialPort1.Write("0");
+            serialPort1.Write("1");
+            serialPort1.Write("2");
+            serialPort1.Write("3");
+            serialPort1.Write("4");
+            serialPort1.Write("5");
+
+
         }
 
    
