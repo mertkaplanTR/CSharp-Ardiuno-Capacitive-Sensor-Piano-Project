@@ -12,11 +12,25 @@ using System.Media;
 using System.Threading;
 using System.Text.RegularExpressions;
 using System.IO;
+using MediaPlayer;
 
 namespace ArduinoPiano
 {
     public partial class Form1 : Form
     {
+        void play1()
+        {
+            //buraya bakılacak
+            //MediaPlayer.MediaPlayer bir = new MediaPlayer.MediaPlayer();
+            //bir.BaseURL = @"C:\\1.wav";
+            //bir.Play();
+
+
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+            player.SoundLocation = "C:\\1.wav";
+            player.Play();
+        }
+
         public Form1()
         {
             InitializeComponent();
@@ -51,14 +65,92 @@ namespace ArduinoPiano
                 lblConnectionStatus.Text = "Connected";
                 picConnectionStatus.Image = Properties.Resources.acik;
                 lblConnectionStatus.ForeColor = Color.Green;
-                // connectArd();
-                //timer1.Start();
-                caldirFunc();
+                timer1.Start();
+                //caldirFunc ve potansiyeller beraber calisiyorlar
+                //caldirFunc();
             }
 
         }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            try
+            {
+                string value = serialPort1.ReadLine();
+                string[] lines = Regex.Split(value, "\r\n");
+                foreach (string line in lines)
+                {
+                    textBox1.Text = "Alinan Deger: " + value;
+                }
+             
 
-     
+                textBox1.Text = "Alinan Deger: " + value;
+                int donusturulendeger = int.Parse(value);
+                if (donusturulendeger >= 480 && donusturulendeger <= 520)
+                {
+                    picPianoPictures.Image = Properties.Resources._0;
+                    play1();
+                    
+
+
+                }
+                else if (donusturulendeger >= 200 && donusturulendeger <= 260)
+                {
+                    picPianoPictures.Image = Properties.Resources._1;
+                    play2();
+             
+                
+                }
+                else if (donusturulendeger >= 2950 && donusturulendeger <= 3050)
+                {
+                    picPianoPictures.Image = Properties.Resources._2;
+                    play3();
+                 
+                
+                }
+                else if (donusturulendeger >= 3800 && donusturulendeger <= 4200)
+                {
+                    picPianoPictures.Image = Properties.Resources._3;
+                    play4();
+                   
+              
+                }
+                else if (donusturulendeger >= 4850 && donusturulendeger <= 5300)
+                {
+                    picPianoPictures.Image = Properties.Resources._4;
+                    play5();
+           
+                 
+                }
+                else if (donusturulendeger >= 6050 && donusturulendeger <= 6200)
+                {
+                    picPianoPictures.Image = Properties.Resources._5;
+                    play6();
+
+                  
+
+                }
+                else
+                {
+                   picPianoPictures.Image = Properties.Resources._default;
+
+                }
+            }
+            catch (Exception ex)
+            {
+                textBox1.Text = ex.ToString();
+                timer1.Stop();
+            }
+        }
+
+
+
+
+
+
+
+
+
+
         void caldirFunc()
         {
             
@@ -77,8 +169,6 @@ namespace ArduinoPiano
             }
         }
 
-
-      
         void potansiyeller(int _donusturulendeger)
         {
         
@@ -124,21 +214,13 @@ namespace ArduinoPiano
                 donusturulendeger = 0;
 
             }
-            else
+            else if(donusturulendeger<=450)
             {
               
                 donusturulendeger = 0;
                 picPianoPictures.Image = Properties.Resources._default;
             }
         }
-
-
- 
-
-
-
-
-
 
 
 
@@ -168,75 +250,8 @@ namespace ArduinoPiano
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            try {
-                
-                string alinanDeger = serialPort1.ReadLine();
-                string value = serialPort1.ReadLine();
-                string[] lines = Regex.Split(value, "\r\n");
-                foreach (string line in lines)
-                {
-                    textBox1.Text = "Alinan Deger: " + alinanDeger; 
-                }
+     
 
-
-          //      alinanDeger = alinanDeger.Trim(); //remove newline
-           
-                textBox1.Text = "Alinan Deger: " +alinanDeger;
-                int donusturulendeger = int.Parse(alinanDeger);
-                if (donusturulendeger >= 480 && donusturulendeger <= 520)
-                {
-                    play1();
-                    picPianoPictures.Image = Properties.Resources._0;
-                    donusturulendeger = 0;
-                }
-                else if (donusturulendeger >= 200 && donusturulendeger <= 260)
-                { play2();
-                    picPianoPictures.Image = Properties.Resources._1;
-                    donusturulendeger = 0;
-                }
-                else if (donusturulendeger >= 2950 && donusturulendeger <= 3050)
-                {
-                    play3();
-                    picPianoPictures.Image = Properties.Resources._2;
-                    donusturulendeger = 0;
-                }
-                else if (donusturulendeger >= 3800 && donusturulendeger <= 4200)
-                {
-                    play4();
-                    picPianoPictures.Image = Properties.Resources._3;
-                    donusturulendeger = 0;
-                }
-                else if (donusturulendeger >= 4850 && donusturulendeger <= 5300)
-                {
-                    play5();
-                    picPianoPictures.Image = Properties.Resources._4;
-                    donusturulendeger = 0;
-                }
-                else if (donusturulendeger >= 6050 && donusturulendeger <= 6200)
-                {
-                    picPianoPictures.Image = Properties.Resources._5;
-                    play6();
-                    
-                    donusturulendeger = 0;
-                    
-                }
-                else { donusturulendeger = 0; picPianoPictures.Image = Properties.Resources._default;
-                   
-                }
-            }
-            catch (Exception ex)
-            { textBox1.Text = ex.ToString();
-                timer1.Stop(); 
-            }
-        }
-        void play1()
-        {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer();
-            player.SoundLocation = "C:\\1.wav";
-            player.Play();
-        }
         void play2()
         {
             System.Media.SoundPlayer player = new System.Media.SoundPlayer();

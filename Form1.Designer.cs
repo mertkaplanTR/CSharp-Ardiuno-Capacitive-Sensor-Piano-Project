@@ -52,7 +52,6 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 300;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // btnBaglan
@@ -126,7 +125,7 @@
             this.Controls.Add(this.lblConnectionStatus);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Istanbul Kultur University Piano Project";
+            this.Text = "Istanbul Kultur University Piano Project - Manual Play";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picPianoPictures)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picConnectionStatus)).EndInit();
