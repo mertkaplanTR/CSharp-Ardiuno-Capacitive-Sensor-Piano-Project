@@ -241,11 +241,7 @@ if(Serial.available())
   }
 
    
-  ///asil kod asagıda
-////bu yok used by analogWrite (0-255) with map!
-//  LEDbrightness = map(num, 0, 1023, 0, 255);
-  // LED gets brighter the harder you press
-  //analogWrite(LEDpin, LEDbrightness);
+
   delay(100);
   //delay(1000);
 }

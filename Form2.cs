@@ -77,51 +77,67 @@ namespace ArduinoPiano
         {
           
             _la();
-            serialPort1.Write("0");
+            serialPort1.Write("5");//la
             System.Threading.Thread.Sleep(250);
 
             _la();
-            serialPort1.Write("0");
+            serialPort1.Write("5");//la
             System.Threading.Thread.Sleep(250);
 
        
             _la();
-            serialPort1.Write("0");
+            serialPort1.Write("5");//la
             System.Threading.Thread.Sleep(250);
             
             _sol();
-   
+            serialPort1.Write("4");//sol
             System.Threading.Thread.Sleep(1000);
 
             _la();
-            serialPort1.Write("0");
+            serialPort1.Write("5");//la
             System.Threading.Thread.Sleep(500);
+
             _la();
-            serialPort1.Write("0");
+            serialPort1.Write("5");//la
             System.Threading.Thread.Sleep(250);
+
             _la();
-            serialPort1.Write("0");
+            serialPort1.Write("5");//la
             System.Threading.Thread.Sleep(250);
+
             _sol();
+            serialPort1.Write("4");//sol
             System.Threading.Thread.Sleep(1000);
 
             _fa();
+            serialPort1.Write("3");//fa
             System.Threading.Thread.Sleep(500);
+            
+
             _sol();
+            serialPort1.Write("4");//sol
             System.Threading.Thread.Sleep(500);
+            
+
             _sol();
+            serialPort1.Write("4");//sol
+            System.Threading.Thread.Sleep(500);
+           
+
+            _la();
+            serialPort1.Write("5");//la
             System.Threading.Thread.Sleep(500);
 
             _la();
-            serialPort1.Write("0");
-            System.Threading.Thread.Sleep(500);
-            _la();
-            serialPort1.Write("0");
+            serialPort1.Write("5");//la
             System.Threading.Thread.Sleep(250);
+
             _la();
-            serialPort1.Write("0");
+            serialPort1.Write("5");//la
             System.Threading.Thread.Sleep(250);
+
             _sol();
+            serialPort1.Write("4");//sol
             System.Threading.Thread.Sleep(1000);
         }
 
@@ -168,12 +184,12 @@ namespace ArduinoPiano
 
         private void button2_Click(object sender, EventArgs e)
         {
-            serialPort1.Write("0");
-            serialPort1.Write("1");
-            serialPort1.Write("2");
-            serialPort1.Write("3");
-            serialPort1.Write("4");
-            serialPort1.Write("5");
+            serialPort1.Write("0");//do
+            serialPort1.Write("1");//re
+            serialPort1.Write("2");//mi
+            serialPort1.Write("3");//fa
+            serialPort1.Write("4");//sol
+            serialPort1.Write("5");//la
 
 
         }
