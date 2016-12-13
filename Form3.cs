@@ -83,11 +83,11 @@ namespace ArduinoPiano
             while (serialPort1.IsOpen == true && karsilastiripArrayeAtilacakDeger>150)
             {
                 //HAFIZAYA ALINACAK BASMA SURELERINI BU ARRAYA GORE AYARLA
-                string[] arr = new string[2]; //10LUK STRING ARRAY TANIMLA  --> 300 ms*2=0,6 saniyelik 
+                string[] arr = new string[2]; //2LİK STRING ARRAY TANIMLA  --> 300 ms*2=0,6 saniyelik 
                 for (int i = 0; i < 2; i++) //BASILI OLDUGU SURECE BUNLARI EGER 100'DEN BUYUKSE BURAYA GIRIP ARRAYA GONDER
                 {
 
-                    arr[i] = serialPort1.ReadLine();
+                    arr[i] = serialPort1.ReadLine();  //SERİ OLARAK GELEN 2 FARKLI DEGERI ARRAYE GONDER
                  
                 }
                 //ARRAYA ALDIKTAN SONRA BUNLARI BIR INTEGER ARRAYA GONDER VE HEPSINI BERABER CALDIR.
@@ -98,20 +98,16 @@ namespace ArduinoPiano
                     { break; }
                     else { 
                     string arrayElamaniniIntDonustur = elemanlar;
-                    string[] donustur=arrayElamaniniIntDonustur.Split(ayiriciArray, StringSplitOptions.None);
+                    string[] donustur=arrayElamaniniIntDonustur.Split(ayiriciArray, StringSplitOptions.None); //ARRAYIN ICINDEKILERI MIXER'E GONDER
                     arrayElamaniniIntDonustur = donustur[0];
                         ////BURASI ACILACAK//   
                         Mixer(int.Parse(arrayElamaniniIntDonustur));
+                        System.Threading.Thread.Sleep(1000);
                     }
                     
                 }
             }
         }
-
-
-
-
-
 
         int[] alinanDegerler = new int[2];
         int countermixer=0;
@@ -127,8 +123,16 @@ namespace ArduinoPiano
             }
             if(countermixer==1)
             {
-               if(alinanDegerler[0] > 0 && alinanDegerler[1] > 0)
+                serialPort1.Close();
+                serialPort1.Close();
+                serialPort1.Close();
+
+                if (alinanDegerler[0] > 0 && alinanDegerler[1] > 0)
                 {
+                    ////////////////////////////////
+
+                  
+
                     var player1 = new WMPLib.WindowsMediaPlayer();
 
                     player1.URL = @"C:\\1.wav";
@@ -136,9 +140,12 @@ namespace ArduinoPiano
                     var player2 = new WMPLib.WindowsMediaPlayer();
 
                     player2.URL = @"C:\\2.wav";
+                    ////////////////////////////////////// serialPort1.Open();
+
                 }
             }
             countermixer++;
+           
         }
 
         private void btnCal_Click(object sender, EventArgs e)

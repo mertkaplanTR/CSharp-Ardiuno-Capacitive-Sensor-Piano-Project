@@ -43,7 +43,7 @@
             // picConnectionStatus
             // 
             this.picConnectionStatus.Image = global::ArduinoPiano.Properties.Resources.bekleniyor;
-            this.picConnectionStatus.Location = new System.Drawing.Point(172, 12);
+            this.picConnectionStatus.Location = new System.Drawing.Point(64, 12);
             this.picConnectionStatus.Name = "picConnectionStatus";
             this.picConnectionStatus.Size = new System.Drawing.Size(108, 77);
             this.picConnectionStatus.TabIndex = 6;
@@ -51,7 +51,7 @@
             // 
             // btnBaglan
             // 
-            this.btnBaglan.Location = new System.Drawing.Point(172, 95);
+            this.btnBaglan.Location = new System.Drawing.Point(121, 96);
             this.btnBaglan.Name = "btnBaglan";
             this.btnBaglan.Size = new System.Drawing.Size(52, 26);
             this.btnBaglan.TabIndex = 7;
@@ -61,7 +61,7 @@
             // 
             // btnBaglantiKes
             // 
-            this.btnBaglantiKes.Location = new System.Drawing.Point(230, 95);
+            this.btnBaglantiKes.Location = new System.Drawing.Point(179, 98);
             this.btnBaglantiKes.Name = "btnBaglantiKes";
             this.btnBaglantiKes.Size = new System.Drawing.Size(52, 26);
             this.btnBaglantiKes.TabIndex = 8;
@@ -71,7 +71,7 @@
             // 
             // btnCal
             // 
-            this.btnCal.Location = new System.Drawing.Point(12, 127);
+            this.btnCal.Location = new System.Drawing.Point(12, 101);
             this.btnCal.Name = "btnCal";
             this.btnCal.Size = new System.Drawing.Size(75, 23);
             this.btnCal.TabIndex = 10;
@@ -81,17 +81,17 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 95);
+            this.button1.Location = new System.Drawing.Point(12, 198);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
-            this.button1.Text = "Beraber Çal";
+            this.button1.Text = "Test Brb";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(172, 127);
+            this.button2.Location = new System.Drawing.Point(121, 130);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 23);
             this.button2.TabIndex = 13;
@@ -102,7 +102,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 261);
+            this.label1.Location = new System.Drawing.Point(25, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 11;
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 377);
+            this.ClientSize = new System.Drawing.Size(254, 223);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
