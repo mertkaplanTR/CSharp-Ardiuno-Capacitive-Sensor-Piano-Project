@@ -15,3 +15,4 @@ C:\Users\Unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano
 C:\Users\Unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\obj\Debug\ArduinoPiano.csproj.ResolveComReference.cache
 C:\Users\Unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\obj\Debug\ArduinoPiano.Form2.resources
 C:\Users\Unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\obj\Debug\Interop.WMPRichPreviewLauncher.dll
+C:\Users\Unknown\documents\visual studio 2015\Projects\ArduinoPiano\ArduinoPiano\obj\Debug\ArduinoPiano.Form3.resources
