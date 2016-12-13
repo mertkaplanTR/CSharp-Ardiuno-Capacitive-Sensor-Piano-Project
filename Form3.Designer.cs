@@ -34,6 +34,7 @@
             this.picConnectionStatus = new System.Windows.Forms.PictureBox();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.lblMultiTouch = new System.Windows.Forms.Label();
+            this.btnBaglantiKes = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picConnectionStatus)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,11 +76,22 @@
             this.lblMultiTouch.TabIndex = 18;
             this.lblMultiTouch.Text = "Multi Touch Area";
             // 
+            // btnBaglantiKes
+            // 
+            this.btnBaglantiKes.Location = new System.Drawing.Point(12, 231);
+            this.btnBaglantiKes.Name = "btnBaglantiKes";
+            this.btnBaglantiKes.Size = new System.Drawing.Size(111, 26);
+            this.btnBaglantiKes.TabIndex = 19;
+            this.btnBaglantiKes.Text = "Kes";
+            this.btnBaglantiKes.UseVisualStyleBackColor = true;
+            this.btnBaglantiKes.Click += new System.EventHandler(this.btnBaglantiKes_Click);
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(258, 253);
+            this.ClientSize = new System.Drawing.Size(329, 342);
+            this.Controls.Add(this.btnBaglantiKes);
             this.Controls.Add(this.btnCal);
             this.Controls.Add(this.btnBaglan);
             this.Controls.Add(this.picConnectionStatus);
@@ -99,5 +111,6 @@
         private System.Windows.Forms.PictureBox picConnectionStatus;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Label lblMultiTouch;
+        private System.Windows.Forms.Button btnBaglantiKes;
     }
 }

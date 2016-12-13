@@ -89,7 +89,7 @@ namespace ArduinoPiano
                 {
                     picPianoPictures.Image = Properties.Resources._0;
                     play1();
-                    
+                 
 
 
                 }
@@ -97,22 +97,22 @@ namespace ArduinoPiano
                 {
                     picPianoPictures.Image = Properties.Resources._1;
                     play2();
-             
-                
+              
+
                 }
                 else if (donusturulendeger >= 2950 && donusturulendeger <= 3050)
                 {
                     picPianoPictures.Image = Properties.Resources._2;
                     play3();
-                 
-                
+                    
+
                 }
                 else if (donusturulendeger >= 3800 && donusturulendeger <= 4200)
                 {
                     picPianoPictures.Image = Properties.Resources._3;
                     play4();
                    
-              
+
                 }
                 else if (donusturulendeger >= 4850 && donusturulendeger <= 5300)
                 {

@@ -28,6 +28,11 @@ namespace ArduinoPiano
 
             player2.URL = @"C:\\2.wav";
 
+            var player5 = new WMPLib.WindowsMediaPlayer();
+
+            player5.URL = @"C:\\5.wav";
+
+
 
 
         }

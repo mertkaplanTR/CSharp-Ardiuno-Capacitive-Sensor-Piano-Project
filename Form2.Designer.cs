@@ -36,14 +36,15 @@
             this.button1 = new System.Windows.Forms.Button();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.picConnectionStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // picConnectionStatus
             // 
             this.picConnectionStatus.Image = global::ArduinoPiano.Properties.Resources.bekleniyor;
-            this.picConnectionStatus.Location = new System.Drawing.Point(64, 12);
+            this.picConnectionStatus.Location = new System.Drawing.Point(335, 178);
             this.picConnectionStatus.Name = "picConnectionStatus";
             this.picConnectionStatus.Size = new System.Drawing.Size(108, 77);
             this.picConnectionStatus.TabIndex = 6;
@@ -51,7 +52,7 @@
             // 
             // btnBaglan
             // 
-            this.btnBaglan.Location = new System.Drawing.Point(121, 96);
+            this.btnBaglan.Location = new System.Drawing.Point(333, 261);
             this.btnBaglan.Name = "btnBaglan";
             this.btnBaglan.Size = new System.Drawing.Size(52, 26);
             this.btnBaglan.TabIndex = 7;
@@ -61,7 +62,7 @@
             // 
             // btnBaglantiKes
             // 
-            this.btnBaglantiKes.Location = new System.Drawing.Point(179, 98);
+            this.btnBaglantiKes.Location = new System.Drawing.Point(391, 261);
             this.btnBaglantiKes.Name = "btnBaglantiKes";
             this.btnBaglantiKes.Size = new System.Drawing.Size(52, 26);
             this.btnBaglantiKes.TabIndex = 8;
@@ -71,9 +72,9 @@
             // 
             // btnCal
             // 
-            this.btnCal.Location = new System.Drawing.Point(12, 101);
+            this.btnCal.Location = new System.Drawing.Point(12, 293);
             this.btnCal.Name = "btnCal";
-            this.btnCal.Size = new System.Drawing.Size(75, 23);
+            this.btnCal.Size = new System.Drawing.Size(431, 35);
             this.btnCal.TabIndex = 10;
             this.btnCal.Text = "Çal";
             this.btnCal.UseVisualStyleBackColor = true;
@@ -81,7 +82,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 198);
+            this.button1.Location = new System.Drawing.Point(12, 334);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -91,7 +92,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(121, 130);
+            this.button2.Location = new System.Drawing.Point(333, 334);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(110, 23);
             this.button2.TabIndex = 13;
@@ -99,23 +100,23 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label1
+            // pictureBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 140);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "label1";
+            this.pictureBox1.Image = global::ArduinoPiano.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(1, -4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(328, 278);
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(254, 223);
+            this.ClientSize = new System.Drawing.Size(455, 369);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCal);
             this.Controls.Add(this.btnBaglantiKes);
             this.Controls.Add(this.btnBaglan);
@@ -124,8 +125,8 @@
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picConnectionStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -137,6 +138,6 @@
         private System.Windows.Forms.Button button1;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -48,15 +48,15 @@ namespace ArduinoPiano
 
         void media(int _birinci, int _ikinci)
         {
-            if(_birinci>200 && _ikinci>0)
-            { 
-            var player1 = new WMPLib.WindowsMediaPlayer();
+            if (_birinci > 200 && _ikinci > 0)
+            {
+                var player1 = new WMPLib.WindowsMediaPlayer();
 
-            player1.URL = @"C:\\1.wav";
+                player1.URL = @"C:\\1.wav";
 
-            var player2 = new WMPLib.WindowsMediaPlayer();
+                var player2 = new WMPLib.WindowsMediaPlayer();
 
-            player2.URL = @"C:\\2.wav";
+                player2.URL = @"C:\\2.wav";
                 return;
             }
             else
@@ -72,7 +72,7 @@ namespace ArduinoPiano
 
         public void runMusic()
         {
-           // int _whileCount = 0;
+            // int _whileCount = 0;
             string alinanDegerBuyukMu = serialPort1.ReadLine();
             string[] ayiriciArray = new string[] { "\r" };
             string[] lines = alinanDegerBuyukMu.Split(ayiriciArray, StringSplitOptions.None);
@@ -80,7 +80,7 @@ namespace ArduinoPiano
             int karsilastiripArrayeAtilacakDeger = int.Parse(alinanDegerBuyukMu);
 
             ////ALINAN DEGER 150'DEN BUYUKSE MIX ICIN ISLEMLERE BASLA
-            while (serialPort1.IsOpen == true && karsilastiripArrayeAtilacakDeger>150)
+            while (serialPort1.IsOpen == true && karsilastiripArrayeAtilacakDeger > 150)
             {
                 //HAFIZAYA ALINACAK BASMA SURELERINI BU ARRAYA GORE AYARLA
                 string[] arr = new string[2]; //2LİK STRING ARRAY TANIMLA  --> 300 ms*2=0,6 saniyelik 
@@ -88,40 +88,41 @@ namespace ArduinoPiano
                 {
 
                     arr[i] = serialPort1.ReadLine();  //SERİ OLARAK GELEN 2 FARKLI DEGERI ARRAYE GONDER
-                 
+
                 }
                 //ARRAYA ALDIKTAN SONRA BUNLARI BIR INTEGER ARRAYA GONDER VE HEPSINI BERABER CALDIR.
 
                 foreach (string elemanlar in arr)
                 {
-                    if(elemanlar==null)
+                    if (elemanlar == null)
                     { break; }
-                    else { 
-                    string arrayElamaniniIntDonustur = elemanlar;
-                    string[] donustur=arrayElamaniniIntDonustur.Split(ayiriciArray, StringSplitOptions.None); //ARRAYIN ICINDEKILERI MIXER'E GONDER
-                    arrayElamaniniIntDonustur = donustur[0];
+                    else
+                    {
+                        string arrayElamaniniIntDonustur = elemanlar;
+                        string[] donustur = arrayElamaniniIntDonustur.Split(ayiriciArray, StringSplitOptions.None); //ARRAYIN ICINDEKILERI MIXER'E GONDER
+                        arrayElamaniniIntDonustur = donustur[0];
                         ////BURASI ACILACAK//   
                         Mixer(int.Parse(arrayElamaniniIntDonustur));
                         System.Threading.Thread.Sleep(1000);
                     }
-                    
+
                 }
             }
         }
 
         int[] alinanDegerler = new int[2];
-        int countermixer=0;
+        int countermixer = 0;
         void Mixer(int _alinanSayi)
         {
-            if(countermixer>1)
+            if (countermixer > 1)
             {
-              countermixer = 0;
+                countermixer = 0;
             }
-            else if(countermixer<2)
-            { 
-            alinanDegerler[countermixer] = _alinanSayi;
+            else if (countermixer < 2)
+            {
+                alinanDegerler[countermixer] = _alinanSayi;
             }
-            if(countermixer==1)
+            if (countermixer == 1)
             {
                 serialPort1.Close();
                 serialPort1.Close();
@@ -131,7 +132,7 @@ namespace ArduinoPiano
                 {
                     ////////////////////////////////
 
-                  
+
 
                     var player1 = new WMPLib.WindowsMediaPlayer();
 
@@ -145,16 +146,33 @@ namespace ArduinoPiano
                 }
             }
             countermixer++;
-           
+
         }
 
         private void btnCal_Click(object sender, EventArgs e)
         {
-           
+
             Random r = new Random();
             int n = r.Next();
             Mixer(n);
-            
+
+        }
+
+        private void btnBaglantiKes_Click(object sender, EventArgs e)
+        {
+            {
+                if (serialPort1.IsOpen == true)
+                {
+                    serialPort1.Close();
+
+                }
+                if (serialPort1.IsOpen == false)
+                {
+
+                    picConnectionStatus.Image = Properties.Resources.kapali;
+
+                }
+            }
         }
     }
 }
